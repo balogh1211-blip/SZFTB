@@ -1,0 +1,32 @@
+<Window x:Class="VedettGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="VersenyGUI" Height="500" Width="850">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="dgAllatok" Grid.Column="0" AutoGenerateColumns="False" 
+                  SelectionMode="Single" IsReadOnly="True" SelectedIndex="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="60"/>
+                <DataGridTextColumn Header="Nev" Binding="{Binding Nev}" Width="*"/>
+                <DataGridTextColumn Header="Ev" Binding="{Binding Ev}" Width="60"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+            <StackPanel Orientation="Horizontal" Margin="0,10">
+                <Button x:Name="btnEszmeiErtek" Content="Eszmei érték" Width="120" Height="30" Click="btnEszmeiErtek_Click"/>
+                <TextBlock x:Name="lblEszmeiErtek" Text="Eszmei érték " Margin="10,5,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,20">
+                <Button x:Name="btnLegalabb400" Content="Legalább 400000" Width="120" Height="30" Click="btnLegalabb400_Click"/>
+                <TextBlock x:Name="lblLegalabb400" Text="" Margin="10,5,0,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
